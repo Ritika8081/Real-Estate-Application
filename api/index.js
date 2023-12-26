@@ -6,15 +6,37 @@ import authRouter from './routes/auth.route.js';
 import listingRouter from './routes/listing.route.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
+// dotenv.config();
+
+// mongoose.connect("mongodb+srv://real-estate-app:eImwU9OIut3bkX7Q@cluster0.5ri0bhc.mongodb.net/realestate?retryWrites=true&w=majority")
+//   .then(() => {
+//     console.log("Connected to MongoDB");
+//   })
+//   .catch((err) => {
+//     console.error("Error connecting to MongoDB:", err);
+//   });
 dotenv.config();
 
-mongoose.connect("mongodb+srv://real-estate-app:eImwU9OIut3bkX7Q@cluster0.5ri0bhc.mongodb.net/realestate?retryWrites=true&w=majority")
+const { MONGODB_URI, PORT } = process.env;
+
+if (!MONGODB_URI || !PORT) {
+  console.error("Please provide MONGODB_URI and PORT in your .env file.");
+  process.exit(1);
+}
+
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
   .then(() => {
     console.log("Connected to MongoDB");
   })
   .catch((err) => {
     console.error("Error connecting to MongoDB:", err);
+    process.exit(1);
   });
+
+
   const __dirname = path.resolve();
 
 const app = express();
