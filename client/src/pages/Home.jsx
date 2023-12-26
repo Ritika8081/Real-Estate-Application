@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className='bg-[#ced2d6]'>
   {/* Top Section */}
-  <div className="flex flex-col gap-6 p-12 sm:p-24 px-3 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("")' }}>
+  <div className="flex flex-col gap-6 p-12 sm:p-24 px-3 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D")','height':40+"rem","width":"full" }}>
   <h1 className="text-4xl lg:text-6xl font-bold text-indigo-800 leading-tight font-serif">
     You are not buying <span className="text-blue-500">a house,</span>
     <br />
