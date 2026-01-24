@@ -149,7 +149,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="relative grid gap-4 p-4 sm:grid-cols-2">
+            <div className="relative grid gap-4 p-4">
               {rentListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}
